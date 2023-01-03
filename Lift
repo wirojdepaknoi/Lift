@@ -1,0 +1,27 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("BIRDX HUB", "Synapse")
+local Tab = Window:NewTab("Lifting Legend 2")
+local Section = Tab:NewSection("Lifting Legend 2")
+Section:NewToggle("Auto Lift", "ToggleInfo", function(state)
+    if state then
+        while true do
+wait(0.01)
+local args = {
+    [1] = "Torpedo"
+}
+
+game:GetService("ReplicatedStorage").RemoteEvents.GainMuscle:FireServer(unpack(args))
+
+  end 
+ else
+    end
+
+end)
+Section:NewButton("Unlock Weights", "ButtonInfo", function()
+    local args = {
+    [1] = "Torpedo"
+}
+
+game:GetService("ReplicatedStorage").RemoteFunctions.EquipWeight:InvokeServer(unpack(args))
+
+end)
